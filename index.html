@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博物館作品集 Gallery</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<!-- 頂部導覽列 -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html" style="text-decoration: none; display: block;">
+      <img src="images/title.png" alt="博物館 Logo" class="logo-img">
+    </a>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html" class="active">文藝廊道</a>
+    <a href="storage.html">藏品庫房</a>
+    <a href="shop.html">紀念品店</a>
+    <button class="btn-login">Log in</button>
+    <a href="cart.html" class="cart-icon-wrapper" title="查看購物車">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-badge hidden" id="cartBadge">0</span>
+    </a>
+  </nav>
+</header>
+
+  <!-- 主畫廊展區 -->
+<main class="gallery-section">
+  <div class="gallery-container">
+    
+    <!-- 展品 1：大衛像（雕像，無畫框，直接立在地上） -->
+    <div class="art-frame statue-item" data-id="1">
+      <img src="images/masterpiece/David.png" alt="大衛像" class="statue-img">
+    </div>
+
+    <!-- 展品 2：蒙娜麗莎（維持牆上畫框） -->
+    <div class="art-frame" data-id="2">
+      <img src="images/masterpiece/La Gioconda(Moona Lisa).png" alt="蒙娜麗莎" class="frame-img">
+    </div>
+
+    <!-- 展品 3：沉思者（雕像，無畫框，直接立在地上） -->
+    <div class="art-frame statue-item" data-id="3">
+      <img src="images/masterpiece/Le Penseur(The Thinker).png" alt="沉思者" class="statue-img">
+    </div>
+
+    <!-- 展品 4：星夜（維持牆上畫框） -->
+    <div class="art-frame" data-id="4">
+      <img src="images/masterpiece/The Starry Night.jpg" alt="星夜" class="frame-img">
+    </div>
+
+  </div>
+
+  
+  <!-- 人物與提示文字層 -->
+  <div class="character-layer">
+    <div id="character" class="character">
+      <!-- 預設顯示 charactor 資料夾內的站立圖 -->
+      <img id="char-img" src="images/charactor/stand.gif" alt="人物">
+      <!-- 當走到畫作前時顯示的小提示 -->
+      <div id="interact-prompt" class="interact-prompt">按 W 查看</div>
+    </div>
+  </div>
+  <div id="guide-text" class="guide-text blink-animation">
+    &lt;&lt;使用A、D或左右鍵移動人物，參觀博物館&gt;&gt;
+  </div>
+</main>
+
+  
+
+  <!-- 頁尾與操作提示 -->
+<footer class="footer-section">
+    
+  <div class="footer-info">
+    <p>好像素博物館</p>
+    <p>館方人員：徐采儀、陳尹軒</p>
+    <p>聯絡資訊：0988-888-888</p>
+  </div>
+</footer>
+
+  <!-- 畫作資訊彈窗 (Modal) -->
+<div id="art-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="close-btn" class="close-btn">&times;</button>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img id="modal-img" src="" alt="作品圖片">
+      </div>
+      <div class="modal-details">
+        <h2 id="modal-title-cn">作品名稱</h2>
+        <h4 id="modal-title-en">Title English</h4>
+        <ul class="info-list">
+          <li><strong>作者：</strong><span id="modal-artist">--</span></li>
+          <li><strong>創作時間：</strong><span id="modal-year">--</span></li>
+          <li><strong>現存地點：</strong><span id="modal-location">--</span></li>
+        </ul>
+        <p id="modal-desc" class="description">作品簡單介紹...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 引入 js 資料夾中的 script.js -->
+<script src="js/script.js"></script>
+</body>
+</html>

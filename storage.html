@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藏品庫房 - 好像素博物館</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html" style="text-decoration: none; display: block;">
+        <img src="images/title.png" alt="博物館 Logo" class="logo-img">
+        </a>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">文藝廊道</a>
+        <a href="storage.html" class="active">藏品庫房</a>
+        <a href="shop.html">紀念品店</a>
+        <button class="btn-login">Log in</button>
+        <a href="cart.html" class="cart-icon-wrapper" title="查看購物車">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
+    </nav>
+</header>
+
+  <!-- 藏品庫房內容區（白底卡片容器） -->
+<main class="storage-main-wrapper">
+    <div class="storage-container">
+      
+        <!-- 畫作區塊 -->
+        <section class="category-section">
+            <h2 class="category-title">畫作</h2>
+            <div class="cards-grid">
+                <!-- 1. 星夜 -->
+                <div class="storage-card">
+                    <div class="img-box">
+                        <img src="images/masterpiece/The Starry Night.jpg" alt="星夜">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title-text">星夜/文森·威廉·梵谷</div>
+                        <p class="info-item">媒材 : 布面油畫</p>
+                        <p class="info-item">尺寸 : 73 × 92 公分</p>
+                        <p class="info-item">創作年份 : 1889年</p>
+                        <p class="info-item">現收藏於 : 美國紐約 現代藝術博物館</p>
+                    </div>
+                </div>
+
+                <!-- 2. 蒙娜麗莎 -->
+                <div class="storage-card">
+                    <div class="img-box">
+                        <img src="images/masterpiece/La Gioconda(Moona Lisa).png" alt="蒙娜麗莎">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title-text">蒙娜麗莎/李奧納多·達文西</div>
+                        <p class="info-item">媒材 : 白楊木板油畫</p>
+                        <p class="info-item">尺寸 : 77 × 53 公分</p>
+                        <p class="info-item">創作年份 : 1503 年 – 1506 年</p>
+                        <p class="info-item">現收藏於 : 法國巴黎 羅浮宮</p>
+                    </div>
+                </div>
+
+                <!-- 3. 未解鎖 -->
+                <div class="storage-card locked">
+                    <div class="img-box">? ? ?</div>
+                    <div class="card-info">
+                        <div class="card-title-text">? ? ? / ? ? ?</div>
+                        <p class="info-item">還未收購相關藏品，歡迎捐贈！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 雕塑區塊 -->
+        <section class="category-section">
+            <h2 class="category-title">雕塑</h2>
+            <div class="cards-grid">
+                <!-- 1. 沉思者 -->
+                <div class="storage-card">
+                    <div class="img-box">
+                        <img src="images/masterpiece/Le Penseur(The Thinker).png" alt="沉思者">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title-text">沉思者/奧古斯特·羅丹</div>
+                        <p class="info-item">媒材 : 青銅雕塑</p>
+                        <p class="info-item">尺寸 : 185 公分</p>
+                        <p class="info-item">創作年份 : 1904 年</p>
+                        <p class="info-item">現收藏於 : 法國巴黎 羅丹美術館</p>
+                    </div>
+                </div>
+
+                <!-- 2. 大衛像 -->
+                <div class="storage-card">
+                    <div class="img-box">
+                        <img src="images/masterpiece/David.png" alt="大衛像">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title-text">大衛像/米開朗基羅</div>
+                        <p class="info-item">媒材 : 卡拉拉大理石雕塑</p>
+                        <p class="info-item">尺寸 : 517 公分</p>
+                        <p class="info-item">創作年份 : 1501 年 – 1504 年</p>
+                        <p class="info-item">現收藏於 : 義大利佛羅倫斯 學院美術館</p>
+                    </div>
+                </div>
+
+                <!-- 3. 未解鎖 -->
+                <div class="storage-card locked">
+                    <div class="img-box">? ? ?</div>
+                    <div class="card-info">
+                        <div class="card-title-text">? ? ? / ? ? ?</div>
+                        <p class="info-item">還未收購相關藏品，歡迎捐贈！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- 頁尾 -->
+<footer class="footer-section">
+  <div class="footer-info">
+    <p>好像素博物館</p>
+    <p>館方人員：徐采儀、陳尹軒</p>
+    <p>聯絡資訊：0988-888-888</p>
+  </div>
+</footer>
+
+</body>
+</html>

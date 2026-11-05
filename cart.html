@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車 - 好像素博物館</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+<header class="navbar">
+    <div class="logo">
+        <a href="index.html" style="text-decoration: none; display: block;">
+        <img src="images/title.png" alt="博物館 Logo" class="logo-img">
+        </a>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">文藝廊道</a>
+        <a href="storage.html">藏品庫房</a>
+        <a href="shop.html">紀念品店</a>
+        <button class="btn-login">Log in</button>
+        <a href="cart.html" class="cart-icon-wrapper" title="查看購物車">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
+    </nav>
+</header>
+<!-- 主內容容器 -->
+<main class="cart-page-container">
+  <h1 class="cart-page-title">我的購物車</h1>
+
+  <!-- 有商品的清單區塊 -->
+    <div id="cartContent">
+        <div class="cart-list" id="cartList"></div>
+        <div class="cart-footer-link">
+            <a href="shop.html" class="go-shop-link">再來逛逛吧 &rarr;</a>
+        </div>
+    </div>
+        <!-- 空購物車顯示區塊 -->
+        <div id="emptyCartMsg" class="empty-cart-box">
+            <p class="empty-text">現在購物車空空如也 T^T</p>
+            <a href="shop.html" class="go-shop-link ">去逛逛吧 &rarr;</a>
+        </div>
+
+
+        <!-- 熱門加購區塊 -->
+        <section class="add-on-section">
+            <h2 class="section-title">熱門加購</h2>
+            <div class="add-on-grid" id="addOnGrid"></div>
+        </section>
+        
+
+        <!-- 結帳金額統計區 -->
+        <section class="cart-summary-section" id="cartSummarySection">
+            <div class="summary-row">
+                <span class="label">小計</span>
+                <span class="val" id="subtotalVal">$ 0</span>
+            </div>
+            <div class="summary-row">
+                <span class="label">運費</span>
+                <span class="val">$70</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row">
+                <span class="label">總計</span>
+                <span class="val" id="grandTotalVal">$ 0</span>
+            </div>
+            <button type="button" class="btn-checkout" id="checkoutBtn">去結帳</button>
+        </section>
+    </main>
+
+
+    
+
+<footer class="footer-section">
+    <div class="footer-info">
+        <p>好像素博物館</p>
+        <p>館方人員：徐采儀、陳尹軒</p>
+        <p>聯絡資訊：0988-888-888</p>
+    </div>
+</footer>
+
+  <script src="js/shop.js"></script>
+</body>
+</html>

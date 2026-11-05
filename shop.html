@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>紀念品店 - 好像素博物館</title>
+    <!-- 引入 CSS 資料夾中的 style.css -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <header class="navbar">
+        <div class="logo">
+        <!-- 指向 images/title.png -->
+            <a href="index.html" style="text-decoration: none; display: block;">
+                <img src="images/title.png" alt="博物館 Logo" class="logo-img">
+            </a>
+        </div>
+    <nav class="nav-links">
+        <a href="index.html">文藝廊道</a>
+        <a href="storage.html">藏品庫房</a>
+        <a href="shop.html" class="active">紀念品店</a>
+        <button class="btn-login">Log in</button>
+        <a href="cart.html" class="cart-icon-wrapper" title="查看購物車">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-badge hidden" id="cartBadge">0</span>
+        </a>
+    </nav>
+</header>
+
+
+<main class="shop-main-container">
+    <!-- 1. 頂部大 Banner (主打沉思之水) -->
+    <section class="featured-banner">
+        <div class="banner-text">
+            <h1><strong>沉思之水</strong></h1>
+            <p class="slogan">無論多難的問題都能迎刃而解！<br>使用過的用戶87%有感！<br>現在特價只要</p>
+            <p class="promo-price">$ 676767<span>元</span></p>
+            <button class="buy-now-btn" onclick="openProductModal(1)">現在手刀搶購 &rarr;</button>
+        </div>
+        <div class="banner-img-box">
+            <img src="images/shop item/The Thinker Water.png" alt="沉思之水">
+        </div>
+    </section>
+
+    <!-- 主區塊：熱賣商品列表 -->
+    <section class="shop-section">
+        <h2 class="section-title">熱賣商品</h2>
+        <!-- 請確保裡面是空的！讓 JS 自動渲染 -->
+        <div class="product-grid" id="productGrid"></div>
+    </section>
+  
+</main>
+
+
+
+<!-- 紀念品詳情彈出視窗 (Modal) -->
+<div id="shopModal" class="shop-modal-overlay hidden">
+    <div class="shop-modal-content">
+        <button class="close-btn" id="closeShopModal">&times;</button>
+      
+        <div class="modal-left">
+            <div class="img-placeholder">
+                <img id="modalImg" src="" alt="商品圖片">
+            </div>
+        </div>
+
+        <div class="modal-right">
+            <h2 id="modalTitleCN">商品名稱</h2>
+            <p id="modalTitleEN" class="subtitle">English Title</p>
+            <p id="modalDesc" class="description">商品敘述內容...</p>
+            <p id="modalSideEffect" class="side-effect">副作用：無</p>
+
+            <!-- 數量選擇器 -->
+            <div class="quantity-row">
+                <div class="quantity-control">
+                    <button type="button" id="btnMinus">-</button>
+                    <input type="number" id="itemQuantity" value="1" readonly>
+                    <button type="button" id="btnPlus">+</button>
+                </div>
+                <span id="modalStock" class="stock-text">現庫存只剩下 0 瓶</span>
+            </div>
+
+            <!-- 加入購物車按鈕 -->
+            <button type="button" id="addToCartBtn" class="add-to-cart-btn">加入購物車</button>
+        </div>
+    </div>
+</div>
+<footer class="footer-section">
+    <div class="footer-info">
+        <p>好像素博物館</p>
+        <p>館方人員：徐采儀、陳尹軒</p>
+        <p>聯絡資訊：0988-888-888</p>
+    </div>
+</footer>
+<script src="js/shop.js"></script>
+
+</body>
+</html>
