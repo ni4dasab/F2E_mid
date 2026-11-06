@@ -73,7 +73,7 @@ const moveSpeed = 4;       // 每次移動像素
 let facingDirection = "right"; // 紀錄最後面向 ('right' 或 'left')
 let isWalking = false;      // 狀態鎖：防止長按鍵盤時一直重複設定圖片 src
 let activeArtId = null;     // 當前作品 ID
-let idleTimer = null;       // 5 秒計時器
+let idleTimer = null;       // 計時器
 
 // 素材路徑
 const imgStandRight = "images/charactor/stand.gif";
@@ -85,6 +85,8 @@ const imgWalkLeft   = "images/charactor/walking_left.gif";
 // ==========================================
 window.addEventListener("keydown", (e) => {
   const key = e.key.toLowerCase();
+
+  //隱藏提示文字
   if (["a", "d", "arrowleft", "arrowright"].includes(key)) {
     if (guideText) guideText.classList.add("hidden");
     startIdleTimer();
@@ -96,7 +98,7 @@ window.addEventListener("keydown", (e) => {
     }
     return;
   }
-
+  //計算區域寬度，設定右邊界限制
   const gallerySection = document.querySelector(".gallery-section");
   const galleryWidth = gallerySection ? gallerySection.offsetWidth : window.innerWidth;
   const maxLeft = galleryWidth - 70;
@@ -106,15 +108,15 @@ window.addEventListener("keydown", (e) => {
     resetIdleTimer();
     if (guideText) guideText.classList.add("hidden");
 
-    // 往左走
+    //往左走
     if (key === "a" || e.key === "ArrowLeft") {
-      charPos = Math.max(10, charPos - moveSpeed);
+      charPos = Math.max(10, charPos - moveSpeed);//左邊界
       facingDirection = "left";
       
-      // 關鍵修復：只有在尚未處於走路狀態時，才切換圖片 src
+      //只有在尚未處於走路狀態時，才切換圖片 src
       if (!isWalking) {
         charImg.src = imgWalkLeft;
-        character.classList.remove("face-left");
+        character.classList.remove("face-left");//移除翻轉
         isWalking = true;
       }
     } 
@@ -123,7 +125,7 @@ window.addEventListener("keydown", (e) => {
       charPos = Math.min(maxLeft, charPos + moveSpeed);
       facingDirection = "right";
       
-      // 關鍵修復：只有在尚未處於走路狀態時，才切換圖片 src
+      
       if (!isWalking) {
         charImg.src = imgWalkRight;
         character.classList.remove("face-left");
@@ -131,17 +133,16 @@ window.addEventListener("keydown", (e) => {
       }
     }
   } 
-  // 按 W 鍵：轉為背面，並開啟 Modal (若有在感應範圍內)
+  //W鍵：轉為背面，開啟Modal(若有在感應範圍內)
   else if (key === "w") {
     resetIdleTimer();
     
-    // 1. 切換為背面圖片 (請確認變數名稱或填入路徑，如 imgBack 或 'images/charactor/back.gif')
+    //切換為背面圖片
     charImg.src = typeof imgBack !== "undefined" ? imgBack : "images/charactor/back.gif";
     character.classList.remove("face-left");
     isWalking = false; // 停止走路動畫狀態
 
-
-    // 2. 觸發打開畫作 Modal
+    //觸發打開畫作 Modal
     if (activeArtId !== null) {
       openModal(activeArtId);
     }
@@ -172,7 +173,7 @@ window.addEventListener("keyup", (e) => {
       character.classList.remove("face-left");
     }
 
-    // 開啟靜止計時器
+    //靜止計時器
     startIdleTimer();
   }
 });
@@ -235,7 +236,6 @@ closeBtn.addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => {
   if (e.target === modal) closeModal();
 });
-
 
 // 頁面載入完成後執行
 document.addEventListener('DOMContentLoaded', () => {
